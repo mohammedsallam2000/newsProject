@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Contact Us";
+}
+<h2>@ViewBag.Title</h2>
+<br /><br />
+<form method="post" enctype="multipart/form-data">
+    <table width="47%">
+        <tr>
+            <td><label>User Name</label></td>
+            <td><input type="text" class="form-control"/></td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" class="form-control" /></td>
+        </tr>
+        <tr>
+            <td><label>Message</label></td>
+            <td><textarea class="form-control"></textarea></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Send" class="btn btn-primary" /></td>
+            <td>@ViewBag.status</td>
+        </tr>
+    </table>
+</form>

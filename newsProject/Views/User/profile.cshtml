@@ -1,0 +1,25 @@
+﻿@model user
+@{
+    ViewBag.Title = "profile";
+}
+
+<h1>Welcome @Model.username </h1>
+
+ <table width="70%" style="margin-top:30px;font-size:20px">
+     <tr>
+         <td>
+             Email : @Model.email
+             <br /> <br />
+             age : @Model.age
+             <br /><br />
+             Address : @Model.address
+         </td>
+         <td>
+             <img src="~/attach/@Model.photo" width="200px"/>
+         </td>
+     </tr>
+     <tr>      
+         <td >@Html.ActionLink("Edit my account", "edit", new { id = Model.Id }) | @Html.ActionLink("Delete my account", "delete", new { id = Model.Id })</td>
+    <td>@Html.ActionLink("Edit photo", "editPhoto", new { id = Model.Id })</td>
+     </tr>
+ </table>

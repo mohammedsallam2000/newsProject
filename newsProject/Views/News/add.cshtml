@@ -1,0 +1,41 @@
+﻿@model news
+@{
+    ViewBag.Title = "add";
+}
+
+<h1>Add News</h1>
+<br />
+<form method="post" enctype="multipart/form-data">
+    <table  width="100%">
+        <tr>
+            <td>@Html.LabelFor(n=>n.title)</td>
+            <td>@Html.TextBoxFor(n=>n.title, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n=>n.title, null, new { @class = "text-danger" })</td>          
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.bref)</td>
+            <td>@Html.TextAreaFor(n => n.bref, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.bref, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.desc)</td>
+            <td>@Html.TextAreaFor(n => n.desc, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.desc, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.photo)</td>
+            <td><input type="file" name="img" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.cat_id)</td>
+            <td>@Html.DropDownListFor(n => n.cat_id, (SelectList)ViewBag.cat, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.desc, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add" class="btn btn-primary" /></td>
+            <td class="text-danger">@ViewBag.status</td>
+        </tr>
+    </table>
+</form> 

@@ -1,0 +1,30 @@
+﻿@model List<news>
+
+@{
+    ViewBag.Title = "allnews";
+}
+
+<h1>All News</h1>
+<br /><br />
+@foreach (var item in Model)
+{
+    <div style="text-align:center; font-size:22px; color:darkslategrey ; font-weight:bold">
+        @item.title
+    </div>
+    <br />
+    <div>
+        <table width="100%">
+            <tr>
+                <td width="70%" style="font-size:18px;">@item.bref</td>
+                <td width="30%"><img src="@item.photo" width="300px" /></td>
+            </tr>
+            <tr>
+                <td width="70%" style="font-size:11px;color:#808080">Cataloge : @item.catalog.name  Date and time : @item.date   Auother : @item.user.username</td>
+                <td width="30%">@Html.ActionLink("Read more ..", "details", new { id = item.id })</td>
+            </tr>
+        </table>
+    </div>
+    <br /><br />
+    <hr style="margin:auto;width:50%" />
+    <br /><br />
+}

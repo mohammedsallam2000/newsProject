@@ -1,0 +1,14 @@
+﻿@model news
+@{
+    ViewBag.Title = "details";
+}
+<div style="text-align:center">
+    <h1>@Model.title</h1><br />
+    <img src="@Model.photo" width="500px" /><br /><br /><br />
+    <p style="font-size:20px;text-align: justify;">@Model.desc</p>
+</div>
+<br /><br /><br />
+<p style="font-size:11px;color: #808080">
+    Cataloge : @Model.catalog.name &nbsp;  Date And Time : @Model.date <br />   Author : @Model.user.username
+</p>
+

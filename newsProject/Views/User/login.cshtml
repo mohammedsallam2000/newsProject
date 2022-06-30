@@ -1,0 +1,26 @@
+﻿@model user
+@{
+    ViewBag.Title = "login";
+}
+
+<h1 style="padding-bottom:20px">Login</h1>
+
+<form method="post">
+    <table width="47%">
+        <tr>
+            <td>@Html.LabelFor(n => n.username)</td>
+            <td>@Html.TextBoxFor(n => n.username, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.username, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.password)</td>
+            <td>@Html.PasswordFor(n => n.password, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.password, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Login" class="btn btn-primary" /></td>
+            <td class = "text-danger">@ViewBag.status</td>
+        </tr>
+    </table>
+</form>

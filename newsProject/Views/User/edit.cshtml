@@ -1,0 +1,58 @@
+﻿@model user
+@{
+    ViewBag.Title = "edit";
+}
+
+<h1>Edit my profile</h1>
+<br /><br />
+
+<form method="post" enctype="multipart/form-data" action="/User/update>
+        @Html.HiddenFor(n => n.Id)
+        <table width="47%">
+            <tr>
+                <td>@Html.LabelFor(n => n.username)</td>
+                <td>@Html.TextBoxFor(n => n.username, new { @class = "form-control" })</td>
+                <td>@Html.ValidationMessageFor(n => n.username, null, new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(n => n.email)</td>
+                <td>@Html.TextBoxFor(n => n.email, new { @class = "form-control" })</td>
+                <td>@Html.ValidationMessageFor(n => n.email, null, new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(n => n.password)</td>
+                <td>@Html.PasswordFor(n => n.password, new { @class = "form-control" })</td>
+                <td>@Html.ValidationMessageFor(n => n.password, null, new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(n => n.confirm_password)</td>
+                <td>@Html.PasswordFor(n => n.confirm_password, new { @class = "form-control" })</td>
+                <td>@Html.ValidationMessageFor(n => n.confirm_password, null, new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(n => n.age)</td>
+                <td>@Html.TextBoxFor(n => n.age, new { @class = "form-control" })</td>
+                <td>@Html.ValidationMessageFor(n => n.age, null, new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(n => n.address)</td>
+                <td>@Html.TextBoxFor(n => n.address, new { @class = "form-control" })</td>
+                <td>@Html.ValidationMessageFor(n => n.address, null, new { @class = "text-danger" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(n => n.photo)</td>
+                <td><input type="file" name="img" /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Update" class="btn btn-primary" /></td>
+                <td>@ViewBag.status</td>
+            </tr>
+        </table>
+    </form>
+
+@section scripts{
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

@@ -1,0 +1,45 @@
+﻿@model news
+@{
+    ViewBag.Title = "edit";
+}
+
+<h1>Edit</h1>
+
+<form method="post"  action="/News/update">
+    @Html.HiddenFor(n => n.id)
+    @Html.HiddenFor(n => n.photo)
+    @Html.HiddenFor(n => n.user_id)
+    @Html.HiddenFor(n => n.date)
+    <table width="100%">
+        <tr>
+            <td>@Html.LabelFor(n => n.title)</td>
+            <td>@Html.TextBoxFor(n => n.title, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.title, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.bref)</td>
+            <td>@Html.TextAreaFor(n => n.bref, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.bref, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.desc)</td>
+            <td>@Html.TextAreaFor(n => n.desc, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.desc, null, new { @class = "text-danger" })</td>
+        </tr>
+        @*<tr>
+            <td>@Html.LabelFor(n => n.photo)</td>
+            <td><input type="file" name="img" /></td>
+            <td></td>
+        </tr>*@
+        <tr>
+            <td>@Html.LabelFor(n => n.cat_id)</td>
+            <td>@Html.DropDownListFor(n => n.cat_id, (SelectList)ViewBag.cats, new { @class = "form-control" })</td>
+            <td>@Html.ValidationMessageFor(n => n.desc, null, new { @class = "text-danger" })</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update" class="btn btn-primary" /></td>
+            <td class="text-danger">@ViewBag.status</td>
+        </tr>
+    </table>
+</form> 

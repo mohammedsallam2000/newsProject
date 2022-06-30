@@ -1,0 +1,26 @@
+﻿@model user
+@{
+    ViewBag.Title = "editPhoto";
+}
+
+<h1>Edit Photo</h1>
+
+<form method="post" action="/User/updatePhoto">
+    <table width="200%">
+        <tr>
+            <td>Current Photo</td>
+            <td><img src="~/attach/@Model.photo" width="200px" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(n => n.photo)</td>
+            <td><input type="file" name="img" /></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Update" class="btn btn-primary" /></td>
+            <td>@ViewBag.status</td>
+        </tr>
+    </table>
+</form>
